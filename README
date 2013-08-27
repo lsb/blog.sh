@@ -1,1 +1,3 @@
 Just compile a damn blog
+
+Take a directory of posts, a directory of assets, and some config settings, and compile that into a jumble of html pages; ideally each page is self-contained.
