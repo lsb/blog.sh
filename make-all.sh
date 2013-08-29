@@ -27,6 +27,6 @@ done
 UPLINK=all-posts.html#${old%.*} NEXTLINK=${oldold}.html ./make.sh posts/${old} > compiled/${old}.html
 
 UPLINK=all-posts.html ./make.sh `ls -t posts/* | head` > compiled/index.html
-UPLINK=/ ./make.sh `ls -t posts/*` > compiled/all-posts.html
+UPLINK=index.html ./make.sh `ls -t posts/*` > compiled/all-posts.html
 
 ./make-rss.sh `ls -t posts/* | head` > compiled/rss.xml
