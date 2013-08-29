@@ -1,1 +1,6 @@
-body { width: 3in }
+body{width:4in;margin:auto;font-family:Georgia;font-size:0.1667in;padding:1em 0em}
+h1{font-size:0.375in;font-weight:normal}
+.crumbs{display:table;width:100%}.crumbwrapper{display:table-row;border-collapse:collapse}.nextcrumb{text-align:left;display:table-cell}.nextcrumb a:before{content:'\00AB'}.prevcrumb{text-align:right;display:table-cell}.prevcrumb a:after{content:'\00BB'}.upcrumb{text-align:center;display:table-cell}.upcrumb a:before,.upcrumb a:after{content:'\2191'}
+.timestamp{color:#AAA;font-style:italic;font-size:0.125in}
+.timestamp:before{content:'posted '}
+.post .permalink a {font-variant:small-caps}
