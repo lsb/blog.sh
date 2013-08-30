@@ -19,9 +19,11 @@ echo "</title><style type='text/css'>"
 cat assets/css
 echo "</style></head><body>"
 cat assets/frontispiece
+echo "<div class=crumbs><div class=crumbwrapper>"
 crumb next $NEXTLINK
-crumb prev $PREVLINK
 crumb up $UPLINK
+crumb prev $PREVLINK
+echo "</div></div>"
 
 for f in "$@"
 do
