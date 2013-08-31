@@ -6,7 +6,7 @@ mkdir -p misnamed
 for misnamed in `ls posts/ | grep -E -v '^[-0-9a-zA-Z]+$'`
 do
     mv posts/${misnamed} misnamed/${misnamed}
-    echo posts/${misnamed} is misnamed, just use [-0-9a-zA-Z] in the title; temporarily moved to misnamed/ > /dev/stderr
+    echo "posts/${misnamed} is misnamed, just use [-0-9a-zA-Z] in the title; temporarily moved to misnamed/" > /dev/stderr
 done
 for f in `ls -t posts/*`
 do
