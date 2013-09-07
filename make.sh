@@ -3,23 +3,23 @@ function permalink {
     base=`basename $1`
     name=${base%.*}
     spacedname=`echo $name | tr - ' '`
-    echo "<p class=permalink><a href='${base}' name='${name}'>${spacedname}</a></p>"
+    echo -n "<p class=permalink><a href='${base}' name='${name}'>${spacedname}</a></p>"
 }
 function crumb {
     if [ $2 ]
     then 
 	echo "<div class=${1}crumb>"
 	permalink $2
-	echo "</div>"
+	echo -n "</div>"
     fi
 }
-echo "<!DOCTYPE html><html><head><title>"
+echo -n "<!DOCTYPE html><html><head><link rel='alternate' type='application/rss+xml' title='RSS' href='rss.xml' /><title>"
 cat assets/blog-title
-echo "</title><style type='text/css'>"
+echo -n "</title><style type='text/css'>"
 cat assets/css
-echo "</style></head><body>"
+echo -n "</style></head><body>"
 cat assets/frontispiece
-echo "<div class=crumbs><div class=crumbwrapper>"
+echo -n "<div class=crumbs><div class=crumbwrapper>"
 crumb next $NEXTLINK
 crumb up $UPLINK
 crumb prev $PREVLINK
@@ -27,9 +27,9 @@ echo "</div></div>"
 
 for f in "$@"
 do
-    echo "<div class=post><p class=timestamp>"
+    echo -n "<div class=post><p class=timestamp>"
     date --date="`stat -c %y $f`" +"%Y-%m-%d %H:%M %Z"
-    echo "</p>"
+    echo -n "</p>"
     permalink ${f}.html
     cat $f
     echo "</div><hr>"
