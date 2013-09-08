@@ -13,7 +13,7 @@ function crumb {
 	echo -n "</div>"
     fi
 }
-echo -n "<!DOCTYPE html><html><head><link rel='alternate' type='application/rss+xml' title='RSS' href='rss.xml' /><title>"
+echo -n "<!DOCTYPE html><html><head><link rel='alternate' type='application/rss+xml' title='RSS' href='rss.xml' /><meta name='viewport' content='width=device-width'><title>"
 cat assets/blog-title
 echo -n "</title><style type='text/css'>"
 cat assets/css
