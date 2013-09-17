@@ -2,7 +2,7 @@
 function permalink {
     base=`basename $1`
     name=${base%.*}
-    spacedname=`echo $name | tr - ' '`
+    spacedname=${name//-/&nbsp;}
     echo -n "<p class=permalink><a href='${base}' name='${name}'>${spacedname}</a></p>"
 }
 function crumb {
@@ -13,10 +13,10 @@ function crumb {
 	echo -n "</div>"
     fi
 }
-echo -n "<!DOCTYPE html><html><head><link rel='alternate' type='application/rss+xml' title='RSS' href='rss.xml' /><meta name='viewport' content='width=device-width'><title>"
+echo -n "<!DOCTYPE html><html><head><link rel=alternate type='application/rss+xml' title=RSS href=rss.xml /><meta name=viewport content='width=device-width'><meta charset='UTF-8'><title>"
 cat assets/blog-title
 echo -n "</title><style type='text/css'>"
-cat assets/css
+tr -d '\n' < assets/css
 echo -n "</style></head><body>"
 cat assets/frontispiece
 echo -n "<div class=crumbs><div class=crumbwrapper>"
