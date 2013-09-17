@@ -1,6 +1,7 @@
 #!/bin/bash
 # make a page for each post.
 
+rm compiled/*
 mkdir -p compiled
 mkdir -p misnamed
 for misnamed in `ls posts/ | grep -E -v '^[-0-9a-zA-Z]+$'`
