@@ -1,16 +1,18 @@
 #!/bin/bash
 function permalink {
-    base=`basename $1`
+    base=${1##*/}
     name=${base%.*}
-    spacedname=${name//-/&nbsp;}
+    spacedname=${name//-/ }
     echo -n "<p class=permalink><a href='${base}' name='${name}'>${spacedname}</a></p>"
 }
 function crumb {
     if [ $2 ]
     then 
-	echo "<div class=${1}crumb>"
+	echo -n "<div class=${1}crumb>"
 	permalink $2
 	echo -n "</div>"
+    else
+	echo -n "<div class=${1}crumb>&nbsp;</div>"
     fi
 }
 echo -n "<!DOCTYPE html><html><head><link rel=alternate type='application/rss+xml' title=RSS href=rss.xml /><meta name=viewport content='width=device-width'><meta charset='UTF-8'><title>"
