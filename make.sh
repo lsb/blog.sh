@@ -15,7 +15,12 @@ function crumb {
 	echo -n "<div class=${1}crumb>&nbsp;</div>"
     fi
 }
-echo -n "<!DOCTYPE html><html><head><link rel=alternate type='application/rss+xml' title=RSS href=rss.xml /><meta name=viewport content='width=device-width'><meta charset='UTF-8'><title>"
+echo -n "<!DOCTYPE html><html><head><link rel=alternate type='application/rss+xml' title=RSS href=rss.xml />"
+if [ -e assets/favico64 ]
+then
+  echo -n "<link rel='shortcut icon' href='` cat assets/favico64 `' />"
+fi
+echo -n "<meta name=viewport content='width=device-width'><meta charset='UTF-8'><title>"
 cat assets/blog-title
 echo -n "</title><style type='text/css'>"
 tr -d '\n' < assets/css
