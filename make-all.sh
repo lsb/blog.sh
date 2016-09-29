@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 # make a page for each post.
 
 rm compiled/*

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 function permalink {
     base=${1##*/}
     name=${base%.*}
